@@ -7,7 +7,8 @@ module.exports = {
         .addStringOption(option =>
 			option
 				.setName('mensagem')
-				.setDescription('A mensagem a ser traduzida.')),
+				.setDescription('A mensagem a ser traduzida.')
+				.setRequired(true)),
 	async execute(interaction) {
         let msg = interaction.options.getString('mensagem');
         msg = msg.toLowerCase().split(" ");

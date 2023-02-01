@@ -51,7 +51,6 @@ module.exports = {
 			.setImage(Valid[1] ? URL[1] : URL[0])
 			//.setColor(interaction.user.hexAccentColor)
             .setTimestamp();
-			//.setFooter({text: interaction.user.tag, iconURL: interaction.user.avatarURL({ dynamic: true })});
 
 		await interaction.reply({ embeds: [ Embed ]});
 	},
