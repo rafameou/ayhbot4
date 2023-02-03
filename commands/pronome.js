@@ -10,6 +10,7 @@ module.exports = {
 				.setDescription('A mensagem a ser traduzida.')
 				.setRequired(true)),
 	async execute(interaction) {
+		await interaction.deferReply();
         let msg = interaction.options.getString('mensagem');
         msg = msg.toLowerCase().split(" ");
 		msg.forEach(function (e, i, a)
@@ -48,6 +49,6 @@ module.exports = {
 			switch (e[e.length - 1]) { case "a": case "o": Replace("e"); break; case "e": Replace("u"); }
 			switch (e[e.length - 2]) { case "a": case "o": Replace("e", true); break; case "e": Replace("u", true); }
 		});
-		await interaction.reply({ content: msg.join(" "), allowedMentions: { parse: [] }});
+		await interaction.editReply({ content: msg.join(" "), allowedMentions: { parse: [] }});
 	},
 };

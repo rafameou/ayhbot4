@@ -7,6 +7,7 @@ module.exports = {
 		.setDescription('Posta um quadrinho aleatório de Garfield.'),
 	async execute(interaction) {
 		//#TODO, desgambiarrar esse codigo
+		await interaction.deferReply();
 
 		function GetComic()
 		{
@@ -42,7 +43,7 @@ module.exports = {
 		}
 
 		if (Valid == 2)
-			return;
+			URL = "https://picayune.uclick.com/comics/ga/1995/ga950705.gif";
 
 		const Embed = new EmbedBuilder()
 			.setAuthor({name:`Garfield ${URL[2]}`, 
@@ -52,7 +53,7 @@ module.exports = {
 			//.setColor(interaction.user.hexAccentColor)
             .setTimestamp();
 
-		await interaction.reply({ embeds: [ Embed ]});
+		await interaction.editReply({ embeds: [ Embed ]});
 	},
 };
 

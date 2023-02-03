@@ -9,6 +9,7 @@ module.exports = {
         .setDescription('Mostra versão do bot e outras coisas.'),
     async execute(interaction)
     {
+        await interaction.deferReply();
         let Ram = process.memoryUsage().rss / 1000000;
         let CPU = "?";
         let CPUAmm = os.cpus().length;
@@ -21,6 +22,6 @@ module.exports = {
             .addFields({name:"Host", value:`**Platform**: ${process.platform}\n**Arch**: ${os.arch()}\n**CPU**: ${CPU} (${CPUAmm})\n**Uptime**: ${moment.duration((os.uptime() * 1000)).format("D[d] H[h] m[m] s[s]")}`, inline:true})
             .addFields({name:"Status", value:`**RAM**: ${Ram} MB.\n**Uptime**: ${moment.duration((process.uptime() * 1000)).format("D[d] H[h] m[m] s[s]")}\n`, inline:false});
 
-        await interaction.reply({ embeds: [Embed], allowedMentions: { parse: [] } });
+        await interaction.editReply({ embeds: [Embed], allowedMentions: { parse: [] } });
     },
 };
