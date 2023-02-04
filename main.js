@@ -26,7 +26,6 @@ for (const file of commandFiles) {
 // When the client is ready, run this code (only once)
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
 client.once(Events.ClientReady, c => {
-    client.user.setActivity("gasolina na fogueira.");
 	console.log("foi");
 });
 
@@ -44,7 +43,7 @@ client.on(Events.InteractionCreate, async interaction => {
 		await command.execute(interaction);
 	} catch (error) {
 		console.error(error);
-		await interaction.reply({ content: "Ocorreu um erro ao executar o comando.", ephemeral: true });
+		await interaction.reply({ content: "Bot explodiu.", ephemeral: true });
 	}
 });
 
