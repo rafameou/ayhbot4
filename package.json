@@ -1,6 +1,6 @@
 {
   "name": "ayhbot4",
-  "version": "4.2.0",
+  "version": "4.3.0",
   "description": "Simple discord bot just for fun.",
   "main": "main.js",
   "scripts": {
