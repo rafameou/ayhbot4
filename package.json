@@ -1,6 +1,6 @@
 {
   "name": "ayhbot4",
-  "version": "4.4.0",
+  "version": "4.4.1",
   "description": "Simple discord bot just for fun.",
   "main": "main.js",
   "scripts": {
@@ -17,12 +17,12 @@
   },
   "homepage": "https://github.com/rafameou/ayhbot4#readme",
   "dependencies": {
-    "axios": "^1.2.6",
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3",
     "moment": "^2.29.4",
     "moment-duration-format": "^2.3.2",
     "os": "^0.1.2",
-    "promisify": "^0.0.3"
+    "promisify": "^0.0.3",
+    "url-metadata": "^3.5.6"
   }
 }
