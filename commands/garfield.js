@@ -3,8 +3,8 @@ const urlMetadata = require('url-metadata')
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName("garfield")
-		.setDescription('Posta um quadrinho aleatório de Garfield.'),
+	.setName("garfield")
+	.setDescription('Posta um quadrinho aleatório de Garfield.'),
 	async execute(interaction) {
 		await interaction.deferReply();
 
@@ -23,12 +23,12 @@ module.exports = {
 
 		const Embed = new EmbedBuilder()
 			.setAuthor({name:metadata["og:title"], 
-			iconURL:"https://avatar.amuniversal.com/feature_avatars/ubadge_images/features/ga/mid_u-201701251612.png", 
-			url:URL}) 
+				iconURL:"https://avatar.amuniversal.com/feature_avatars/ubadge_images/features/ga/mid_u-201701251612.png", 
+				url:URL}) 
 			.setImage(metadata["og:image"])
-			//.setDescription(metadata["og:description"])
-			//.setColor(interaction.user.hexAccentColor)
-            	.setTimestamp();
+		//.setDescription(metadata["og:description"])
+		//.setColor(interaction.user.hexAccentColor)
+			.setTimestamp();
 
 		await interaction.editReply({ embeds: [ Embed ]});
 	},

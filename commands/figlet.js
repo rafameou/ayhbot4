@@ -3,13 +3,13 @@ const util = require("util");
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('figlet')
-		.setDescription('Bota numa fonte feia ascii.')
-		.addStringOption(option =>
-			option
-				.setName('frase')
-				.setDescription('Frase a ser asciizado.')
-				.setRequired(true)),
+	.setName('figlet')
+	.setDescription('Bota numa fonte feia ascii.')
+	.addStringOption(option =>
+		option
+		.setName('frase')
+		.setDescription('Frase a ser asciizado.')
+		.setRequired(true)),
 
 	async execute(interaction)
 	{

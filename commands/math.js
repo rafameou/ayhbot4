@@ -3,13 +3,13 @@ const util = require("util");
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('math')
-		.setDescription('Roda o comando no octave.')
-		.addStringOption(option =>
-			option
-				.setName('comando')
-				.setDescription('Comando a ser executado.')
-				.setRequired(true)),
+	.setName('math')
+	.setDescription('Roda o comando no octave.')
+	.addStringOption(option =>
+		option
+		.setName('comando')
+		.setDescription('Comando a ser executado.')
+		.setRequired(true)),
 
 	async execute(interaction)
 	{

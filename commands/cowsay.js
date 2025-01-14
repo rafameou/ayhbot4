@@ -3,13 +3,13 @@ const util = require("util");
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('cowsay')
-		.setDescription('Uma vaca fala o que você digitou.')
-		.addStringOption(option =>
-			option
-				.setName('frase')
-				.setDescription('Frase a ser falada pela vaca.')
-				.setRequired(true)),
+	.setName('cowsay')
+	.setDescription('Uma vaca fala o que você digitou.')
+	.addStringOption(option =>
+		option
+		.setName('frase')
+		.setDescription('Frase a ser falada pela vaca.')
+		.setRequired(true)),
 
 	async execute(interaction)
 	{
