@@ -20,7 +20,7 @@ module.exports = {
 			limited = true;
 			try {
 				const response = await ollama.chat({
-					model: 'qwen2.5:0.5b',
+					model: 'llama3.2:1b',
 					messages: [{ role: 'user', content: msg }],
 				});
 				reply = response.message.content.substring(0, 3999);

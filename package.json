@@ -22,6 +22,7 @@
     "dotenv": "^16.0.3",
     "moment": "^2.29.4",
     "moment-duration-format": "^2.3.2",
+    "ollama": "^0.5.12",
     "os": "^0.1.2",
     "promisify": "^0.0.3",
     "url-metadata": "^3.5.6"
