@@ -20,22 +20,22 @@ module.exports = {
 			limited = true;
 			try {
 				const response = await ollama.chat({
-					model: 'llama3.2:1b',
+					//model: 'hf.co/mradermacher/Llama-3.2-1B-Instruct-Uncensored-GGUF:Q8_0',
+					model: 'deepseek-r1:1.5b',
 					messages: [{ role: 'user', content: msg }],
 				});
-				reply = response.message.content.substring(0, 3999);
-				if (!reply)
-					reply = "Erro! A IA retornou nada."
+				reply = response.message.content;
+				await interaction.editReply({content: `Prompt Original: ${msg}` });
+				for (let i = 0; i < reply.length; i += 2000) {
+					await interaction.followUp({content: reply.slice(i, i + 2000)});
+				}
+
 			}
-			catch (error) {console.log(error);}
+			catch (error) {
+				console.log(error);
+				await interaction.editReply({ content: "Bot deu timeout, provavelmente ficou escrevendo pra sempre."});
+			}
 			limited = false;
 		}
-
-		const Embed = new EmbedBuilder()
-			.setDescription(reply)
-			.setFooter({text: msg})
-			.setTimestamp();
-
-		await interaction.editReply({ embeds: [ Embed ]});
-	},
+	}
 };
