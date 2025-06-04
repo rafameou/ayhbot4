@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require("discord.js");
 const util = require("util");
+const utiljs = require("../util");
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -16,7 +17,7 @@ module.exports = {
 		await interaction.deferReply();
 		let msg = interaction.options.getString('frase');
 		const execFile = util.promisify(require('child_process').execFile);
-		const {stdout} = await execFile("firejail", ["--private", "--quiet", "figlet", `${msg}`]);
+		const {stdout} = await execFile("firejail", ["--private", "--quiet", await utiljs.getBinPath(execFile, "octave-cli"), `${msg}`]);
 		await interaction.editReply({ content: `\`\`\`${stdout}\`\`\``, allowedMentions: { parse: [] } });
 	},
 };
